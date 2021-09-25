@@ -8,5 +8,5 @@ dotenv_path = join(dirname(__file__), '.env')
 load_dotenv(dotenv_path)
 
 PAGE_LINK = os.environ.get("PAGE_LINK")
-MAIL_ADDRESS = os.environ.get("MAIL_ADDRESS")
-PASSWORD = os.environ.get("PASSWORD")
+MAIL_ADDRESSES = os.environ.get("MAIL_ADDRESSES")
+PASSWORDS = os.environ.get("PASSWORDS")
