@@ -1,4 +1,4 @@
 import datetime
-def is_weekend(today :datetime.date):
-    weekday: int = today.weekday()
+def is_weekend(d :datetime.date):
+    weekday: int = d.weekday()
     return weekday == 5 or weekday == 6
