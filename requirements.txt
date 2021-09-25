@@ -1,0 +1,5 @@
+certifi==2021.5.30
+chromedriver-binary==94.0.4606.41.0
+python-dotenv==0.19.0
+selenium==3.141.0
+urllib3==1.26.7
