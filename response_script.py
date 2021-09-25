@@ -15,9 +15,7 @@ MAIL_ADDRESS = settings.MAIL_ADDRESS
 PASSWORD = settings.PASSWORD
 
 import weekday
-today = datetime.date.today()
 is_weekend = weekday.is_weekend
-
 
 # field xpaths
 temperature_xpath = "/html/body/div/div/div/div/div[1]/div/div[1]/div[2]/div[2]/div[1]/div/div[2]/div/div/input"
@@ -35,7 +33,9 @@ temperature = 36.0 + random.randrange(6) / 10
 weekday = datetime.date.today().weekday()
 
 # driver
-driver = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.add_argument('--headless')
+driver = webdriver.Chrome(options=options)
 
 driver.get(PAGE_LINK)
 
@@ -57,7 +57,7 @@ temperature_field.send_keys(str(temperature))
 symptom_field = WebDriverWait(driver, 60).until(EC.element_to_be_clickable((By.XPATH, symptom_xpath)))
 symptom_field.click()
 
-if(is_weekend(today=today)):
+if(is_weekend(today= datetime.date.today())):
     absent_field = WebDriverWait(driver, 60).until(EC.element_to_be_clickable((By.XPATH, absent_xpath)))
     absent_field.click()
 else:
