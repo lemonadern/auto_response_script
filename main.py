@@ -2,13 +2,13 @@ import chromedriver_binary
 from selenium import webdriver
 import datetime
 
-from driver import login, submit_form
+from package.driver import login, submit_form
 
 from settings import PAGE_LINK, MAIL_ADDRESS, PASSWORD
 
-from weekday import is_weekend
-from temperature import temperature
-import elements
+from package.weekday import is_weekend
+from package.temperature import temperature
+from package import elements
 
 # driver
 options = webdriver.ChromeOptions()
